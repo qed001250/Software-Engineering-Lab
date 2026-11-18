@@ -37,7 +37,7 @@ def test_create_order():
 
 def test_invalid_quantity():
     response = client.post("/orders", json={"product_id": 1, "quantity": 0})
-    assert response.status_code == 100
+    assert response.status_code == 400
 
 
 def test_insufficient_stock():
